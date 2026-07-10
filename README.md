@@ -39,8 +39,8 @@ This repository contains my daily DSA solutions, pattern programs, and interview
 ```text
 DSA-Journey/
 │
-├── Patterns/
-├── Mathematics/
+├── Basics/
+├── Sorting/
 ├── Arrays/
 ├── Strings/
 ├── LinkedList/
@@ -49,17 +49,13 @@ DSA-Journey/
 ├── Trees/
 ├── Graphs/
 ├── DynamicProgramming/
-└── LeetCode/
+└── LeetCode
 ```
-
-
 ---
 
 ## 💻 Languages Used
 
 - Python 🐍
-
-
 ---
 
 ## 📈 Current Goal
