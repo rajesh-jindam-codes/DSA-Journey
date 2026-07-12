@@ -14,23 +14,28 @@ class singlyLinkedList:
             while curr.next is not None:
                 curr=curr.next
             curr.next=newNode
-    def deleteNthNode(self,n):
-        temp=self.head
-        length=0
-        while temp is not None:
-            length+=1
-            temp=temp.next
-        if length==n:
-            self.head=self.head.next
-            return
-        positiontoStop=length-n
-        count=1
+    def deleteNthNode(self, n):
+        fast = self.head
+        slow = self.head
 
-        temp=self.head
-        while count<positiontoStop:
-            temp=temp.next
-            count+=1
-        temp.next=temp.next.next
+    # Move fast pointer n steps ahead
+        for _ in range(n):
+            fast = fast.next
+
+    # If we need to delete the head node
+        if fast is None:
+            self.head = self.head.next
+            return self.head
+
+    # Move both pointers until fast reaches the last node
+        while fast.next is not None:
+            fast = fast.next
+            slow = slow.next
+
+    # Delete the nth node from the end
+        slow.next = slow.next.next
+
+        return self.head
     def printList(self):
         temp=self.head
         while temp:
@@ -46,3 +51,4 @@ sll.append(50)
 sll.printList()
 sll.deleteNthNode(1)
 sll.printList()
+# sll.deleteNthNode(1)
