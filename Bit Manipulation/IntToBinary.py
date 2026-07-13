@@ -6,5 +6,6 @@ def inttoBinary(num):
         else:
             result+='0'
         num//=2
+    result=result[::-1]
     print(result)
-inttoBinary(5)
+inttoBinary(4)
