@@ -33,7 +33,7 @@ def rightView(node):
         for i in range(levelSize):
             node=queue.popleft()
             if i==levelSize-1:
-                e=result.append(node.val)
+                result.append(node.val)
             if node.left:
                 queue.append(node.left)
             if node.right:
