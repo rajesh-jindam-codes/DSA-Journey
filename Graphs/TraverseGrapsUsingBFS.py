@@ -1,8 +1,8 @@
 from collections import deque
 def bfs(n,adj,startingNode):
+    ans=[]
     visited=[0]*(n+1)
     queue=deque()
-    ans=[]
     queue.append(startingNode)
     visited[startingNode]=1
     while len(queue)!=0:
