@@ -1,9 +1,9 @@
 def dfs(node,visited,adj,result):
     visited[node]=1
     result.append(node)
-    for n in adj[node]:
-        if visited[n]==0:
-            dfs(n,visited,adj,result)
+    for i in adj[node]:
+        if visited[i]==0:
+            dfs(i,visited,adj,result)
     return result
 
 n=9
