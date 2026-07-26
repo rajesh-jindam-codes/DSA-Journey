@@ -4,9 +4,9 @@ class Solution:
     def bfs(self,matrix):
         rows=len(matrix)
         cols=len(matrix[0])
-        visited=[[0 for _ in range(cols)] for _ in range(rows)]
-        distance=[[0 for _ in range(cols)] for _ in range(rows)]
         queue=deque()
+        visited=[[0 for _ in range(cols)]for _ in range(rows)]
+        distance=[[0 for _ in range(cols)] for _ in range(rows)]
         for r in range(rows):
             for c in range(cols):
                 if matrix[r][c]==0:
@@ -15,14 +15,14 @@ class Solution:
         while len(queue)!=0:
             i,j,d=queue.popleft()
             distance[i][j]=d
-            for x,y in [(-1,0),(1,0),(0,1),(0,-1)]:
-                newI,newJ=i+x,j+y
-                if newI<0 or newJ<0 or newJ>=cols or newI>=rows:
+            for dx,dy in [(-1,0),(1,0),(0,1),(0,-1)]:
+                newI,newJ=i+dx,j+dy
+                if newI<0 or newJ<0 or newI>=rows or newJ>=cols:
                     continue
                 if visited[newI][newJ]==1:
                     continue
                 queue.append([newI,newJ,d+1])
                 visited[newI][newJ]=1
-        return distance
+        return distance 
 obj=Solution()
 print(obj.bfs(matrix))
