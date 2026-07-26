@@ -12,4 +12,4 @@ class Solution:
             n//=10
         return first*second
 obj=Solution()
-print(obj.maxProduct(56))
+print(obj.maxProduct(9654289))
