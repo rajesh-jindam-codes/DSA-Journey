@@ -5,7 +5,7 @@ wordList=["hot","dot","dog","lot","log","cog"]
 class Solution:
     def ladderLength(self,beginWord,endWord,wordList):
         wordSet=set(wordList)
-        if endWord not in wordList:
+        if endWord not in wordSet:
             return 0
         queue=deque()
         queue.append((beginWord,1))
@@ -18,7 +18,7 @@ class Solution:
                     if ch==currWord[i]:
                         continue
                     newWord=currWord[:i]+ch+currWord[i+1:]
-                    if newWord in wordList:
+                    if newWord in wordSet:
                         queue.append((newWord,level+1))
                         wordSet.remove(newWord)
         return 0
