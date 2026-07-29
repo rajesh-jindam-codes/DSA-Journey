@@ -1,8 +1,8 @@
 class Solution:
-    def findShortedtSubarray(self,nums):
-        count={}
-        first={}
+    def degreeofArray(self,nums):
         last={}
+        first={}
+        count={}
         for i,num in enumerate(nums):
             count[num]=count.get(num,0)+1
             if num not in first:
@@ -16,5 +16,5 @@ class Solution:
                 ans=min(ans,length)
         return ans
 obj=Solution()
-nums = [1,2,2,3,1]
-print(obj.findShortedtSubarray(nums))
+nums=[1,2,2,3,1]
+print(obj.degreeofArray(nums))
