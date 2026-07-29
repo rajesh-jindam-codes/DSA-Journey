@@ -14,7 +14,7 @@ class Solution:
                     continue
                 if grid[newI][newJ]=='0':
                     continue
-                if visited[newI][newJ]=='1':
+                if visited[newI][newJ]==1:
                     continue
                 visited[newI][newJ]=1
                 queue.append((newI,newJ))
