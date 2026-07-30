@@ -7,4 +7,4 @@ class Solution:
             cash=max(cash,hold+price-fee)
         return cash
 obj=Solution()
-print(obj.maxProfit([5,1,3,6,4,2,0,7,8,9,4,0,10],3))
+print(obj.maxProfit([5,6,3,1,4,2,4,8,1],2))
