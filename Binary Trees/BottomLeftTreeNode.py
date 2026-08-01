@@ -11,12 +11,12 @@ tea=Node('tea')
 coffe=Node('coffe')
 cola=Node('cola')
 sprite=Node('sprite')
-# drinks.left=hot
-# drinks.right=cold
-# hot.left=tea
-# hot.right=coffe
-# cold.left=cola
-# cold.right=sprite
+drinks.left=hot
+drinks.right=cold
+hot.left=tea
+hot.right=coffe
+cold.left=cola
+cold.right=sprite
 class Solution:
     def bottomLeft(self,node):
         queue=deque([node])
