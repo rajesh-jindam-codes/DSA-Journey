@@ -1,17 +1,17 @@
 class Solution:
-    def solve(self,i,j,nums,):
+    def solve(self,i,j,nums,dp):
         if i==j:
             return nums[i]
         if dp[i][j]!=-1:
             return dp[i][j]
-        pickLeft=nums[i]-self.solve(i+1,j,nums)
-        pickRight=nums[j]-self.solve(i,j-1,nums)
+        pickLeft=nums[i]-self.solve(i+1,j,nums,dp)
+        pickRight=nums[j]-self.solve(i,j-1,nums,dp)
         dp[i][j]=max(pickLeft,pickRight)
         return dp[i][j]
     def predictWinner(self,nums):
         n=len(nums)
         dp=[[-1 for _ in range(n)] for _ in range(n)]
-        return self.solve(0,n-1,nums)>=0
+        return self.solve(0,n-1,nums,dp)>=0
 obj=Solution()
 nums=[1,5,2]
 print(obj.predictWinner(nums))
