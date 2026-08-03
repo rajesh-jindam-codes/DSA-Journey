@@ -6,4 +6,4 @@ class Solution:
             result.append(gray)
         return result
 obj=Solution()
-print(obj.grayCode(2))
+print(obj.grayCode(6))
