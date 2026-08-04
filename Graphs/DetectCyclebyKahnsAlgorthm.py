@@ -1,6 +1,5 @@
 from collections import deque
 
-# from Arrays.DegreeofArray import Solution
 def bfs(V,edges):
     adjList=[[] for _ in range(V)]
     indegrees=[0]*V
