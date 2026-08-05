@@ -5,6 +5,7 @@ class Solution:
         indegrees=[0]*numCourses
         for u,v in prerequisites:
             adjList[u].append(v)
+            indegrees[v]+=1
         queue=deque()
         result=[]
         for i in range(numCourses):
@@ -21,4 +22,4 @@ class Solution:
             return True
         return False
 obj=Solution()
-print(obj.canFinish(2,[[1,0]]))  # Output: True
+print(obj.canFinish(2,[[1,0]]))
