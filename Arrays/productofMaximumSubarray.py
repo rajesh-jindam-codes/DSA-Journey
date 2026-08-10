@@ -12,4 +12,4 @@ class Solution:
             ans=max(ans,currMax)
             return ans
 obj=Solution()
-print(obj.maxProduct([2,3,-2,4]))
+print(obj.maxProduct([2,3,-2,4,8]))
