@@ -20,6 +20,7 @@ node2.right = node5
 
 node3.left = node6
 node3.right = node7
+
 class Solution:
     def hasPathSum(self,root,targetSum):
         if root is None:
