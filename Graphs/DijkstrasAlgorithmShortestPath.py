@@ -1,24 +1,24 @@
 import heapq
 class Solution:
-    def dijkstras(self,V,edges,src):
+    def dijkstras(self,V,edges,sec):
         adjList=[[] for _ in range(V)]
-        for u,v,d in edges:
-            adjList[u].append([v,d])
-            adjList[v].append([u,d])
+        for u,v,w in edges:
+            adjList[u].append([v,w])
+            adjList[v].append([u,w])
         distance=[float('inf') for _ in range(V)]
         distance[src]=0
-        prioQueue=[[0,src]]
-        while len(prioQueue)!=0:
-            currDist,node=heapq.heappop(prioQueue)
+        queue=[[0,src]]
+        while len(queue)!=0:
+            currDist,node=heapq.heappop(queue)
             if currDist>distance[node]:
                 continue
             for adjNode,weight in adjList[node]:
                 distTrav=currDist+weight
                 if distTrav<distance[adjNode]:
                     distance[adjNode]=distTrav
-                    prioQueue.append([distTrav,adjNode])
+                    queue.append([distTrav,adjNode])
         return distance
-V = 5
+V = 5   
 
 edges = [
     [0, 1, 2],
