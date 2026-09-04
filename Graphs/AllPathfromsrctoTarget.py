@@ -1,8 +1,6 @@
 class Solution:
     def allPathsSourceTarget(self, graph,src,target):
-        n=len(graph)
         result=[]
-
         def dfs(node,path):
             if node==target:
                 result.append(path[:])
