@@ -1,6 +1,6 @@
 import heapq
 class Solution:
-    def dijkstras(self,V,edges,sec):
+    def dijkstras(self,V,edges,src):
         adjList=[[] for _ in range(V)]
         for u,v,w in edges:
             adjList[u].append([v,w])
@@ -16,7 +16,7 @@ class Solution:
                 distTrav=currDist+weight
                 if distTrav<distance[adjNode]:
                     distance[adjNode]=distTrav
-                    queue.append([distTrav,adjNode])
+                    heapq.heappush(queue,[distTrav,adjNode])
         return distance
 V = 5   
 
