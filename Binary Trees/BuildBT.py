@@ -6,7 +6,7 @@ class TreeNode:
         self.right=None
 class Solution:
     def buildTree(self,list):
-        if not list:
+        if not list or list[0] is None: 
             return None
         root=TreeNode(list[0])
         queue=deque([root])
@@ -18,12 +18,13 @@ class Solution:
                 queue.append(curr.left)
             i+=1
             if i<len(list) and list[i] is not None:
-                curr.right=TreeNode(list[0])
+                curr.right=TreeNode(list[i])
                 queue.append(curr.right)
             i+=1
         return root
-list=[1,2,3,4,5,None,7]
-root=Solution().buildTree(list)
+values = [1, 2, 3, 4, 5, None, 7]
+obj=Solution()
+root = obj.buildTree(values)
 print(root.val)               # 1
 print(root.left.val)          # 2
 print(root.right.val)         # 3
