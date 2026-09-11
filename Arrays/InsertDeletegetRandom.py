@@ -1,5 +1,5 @@
 import random
-class RandomSet(object):
+class Solution:
     def __init__(self):
         self.nums=[]
         self.index={}
@@ -15,12 +15,13 @@ class RandomSet(object):
         index=self.index[val]
         last=self.nums[-1]
         self.nums[index]=last
+        self.index[last]=index
         self.nums.pop()
         del self.index[val]
         return True
     def getRandom(self):
         return random.choice(self.nums)
-obj = RandomSet()
+obj = Solution()
 
 print(obj.insert(1))      # True
 print(obj.remove(2))      # False
